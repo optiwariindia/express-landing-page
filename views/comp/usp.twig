@@ -1,0 +1,16 @@
+<div class="usp" id="usp">
+	<h2>{{usp.title}}</h2>
+	<div class="content">
+		{% for item in usp.usps %}
+
+			<div class="card">
+				<div class="card-image">
+					<picture>
+						<source type="image/jpeg" src="{{item.image}}"/><img src="{{item.image}}" alt="{{item.name}}"/>
+					</picture>
+				</div>
+				<div class="card-title">{{item.name}}</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

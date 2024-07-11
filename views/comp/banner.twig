@@ -1,0 +1,29 @@
+<div class="banner">
+	<div class="banner-container">
+		<picture>
+			<source type="image/jpeg" src="{{banner.image}}"/>
+            <img src="{{banner.image}}" alt="Banner"/>
+		</picture>
+	</div>
+	<div class="banner-body">
+		<div class="banner-text">
+			<h1>{{banner.title}}</h1>
+		</div>
+		<div class="banner-form">
+			<form action="">
+				<div class="form-title">Get Quotes</div>
+				<div class="input">
+					<label for="">Name</label><input required="" type="text" pattern="[a-z A-Z]+" name="name"/></div>
+				<div class="input">
+					<label for="">E-Mail</label><input required="" type="email" name="email"/>
+				</div>
+				<div class="input">
+					<label for="">Phone</label><input required="" type="tel" name="phone"/>
+				</div>
+				<div class="button">
+					<button>Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>

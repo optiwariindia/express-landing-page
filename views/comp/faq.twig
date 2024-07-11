@@ -1,0 +1,14 @@
+<div class="faq" id="faq">
+	<h2>{{faq.title}}</h2>
+	<div class="content" accordian>
+		{% for item in faq.data %}
+			<div class="que-block {{(loop.index == 1)?"open":""}}">
+				<div class="que">
+					<div class="title">{{item.question}}</div>
+					<span class="caret-button"></span>
+				</div>
+				<div class="ans">{{item.answer}}</div>
+			</div>
+		{% endfor %}
+	</div>
+</div>

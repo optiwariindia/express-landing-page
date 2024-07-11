@@ -1,0 +1,15 @@
+<header>
+	<a href="/" class="logo">
+		<picture>
+			<source type="image/png" src={{project.logo}}/>
+			<img src={{project.logo}} alt={{project.name}}/>
+		</picture>
+	</a>
+	<ul class="navbar">
+		{% for item in navbar %}
+			<li>
+				<a href={{item.url}}>{{item.name}}</a>
+			</li>
+		{% endfor %}
+	</ul>
+</header>

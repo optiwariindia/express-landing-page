@@ -1,0 +1,30 @@
+{
+  "name": "landing-pages",
+  "version": "1.0.0",
+  "description": "Landing page",
+  "main": "app/server.js",
+  "type":"module",
+  "scripts": {
+    "start": "node app/server.js",
+    "dev": "nodemon app/server.js"
+  },
+  "keywords": [
+    "express server based landing pages"
+  ],
+  "author": "Om Prakash Tiwari <optiwari.india@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "express-form-parser": "^1.0.0",
+    "express-pureip": "^1.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.0",
+    "nodemailer": "^6.9.14",
+    "twig": "^1.17.1",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}

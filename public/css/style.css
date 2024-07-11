@@ -311,9 +311,10 @@ footer .socials{
 .testimonials .content{
     display:grid;
     gap:20px;
+	grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
 }
 .testimonials .content .card {
-    display: grid;grid-template-columns: 200px 1fr;
+    display: grid;grid-template-columns: minmax(50px,1fr) 5fr;
     border:1px solid black;
     gap:20px;
     border-radius:10px;
@@ -321,7 +322,9 @@ footer .socials{
 }
 .testimonials .content .card .card-image{
     text-align:center;
-    background-color:var(--secondary);
+	display: flex;
+	align-items: center;
+	justify-content: center;
     color:var(--primary);
 }
 .testimonials .card .card-body .message {

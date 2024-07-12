@@ -1,0 +1,80 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url('/images/banner.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+.login-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    width:100%;
+    height:100%;
+}
+.login-form{
+    background:rgba(255,255,255,0.8);
+    padding:20px;
+    border-radius:10px;
+    box-shadow: 0 0 10px #fff;
+    width:300px;
+}
+.login-form h2{
+    text-align:center;
+    margin:0 0 20px 0;
+}
+.login-form form {
+    display:grid;
+    gap:20px;
+}
+.input-group{
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+}
+.input-group input{
+    padding:5px;
+    border-radius:5px;
+    border:none;
+}
+.error{
+	color:red;
+	font-size:14px;
+	text-align:right;
+}
+
+button {
+	border: none;
+	background-color:rgba(14,27,27,1);
+	color: #faa500;
+	border-radius: 5px;
+	padding: 10px 20px;
+	transition: 500ms ease-in-out;
+	font-weight: bold;
+	font-size: 16px;
+}
+button:hover {
+	background:  #faa500;
+	color: rgba(14,27,27,1);
+}
+.toast{
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	display:flex;
+	padding:10px;
+	color:#fff;
+	justify-content:center;
+	align-items:center;
+}
+.toast.error{
+	background:red;
+}
+.toast.success{
+	background:#002500;
+}

@@ -4,6 +4,7 @@ import cors from 'cors'
 import twig from 'twig'
 import expressPureip from 'express-pureip'
 import fs from "fs";
+import routes from "./route/index.js";
 (async () => {
     const env = process.env;
     const port = env.port;
@@ -18,14 +19,11 @@ import fs from "fs";
         .use(express.urlencoded({ extended: true }))
         .use(express.static("public"))
         .use(expressPureip)
-        .get("/",(req,res)=>{
-            let data=JSON.parse(fs.readFileSync("app/data.json","utf8"));
+        .use(routes)
+        .get("/:product", (req, res) => {
+            let data = JSON.parse(fs.readFileSync("app/data.json", "utf8"));
             console.log(data);
-            return res.render("index.twig",data);
-            return res.json({
-                status:"success",
-                message:"Express server is ready to use"
-            })
+            return res.render("index.twig", data);
         })
         .listen(port, () => {
             console.log(`Server is running on port ${port}`);

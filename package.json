@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "Landing page",
   "main": "app/server.js",
-  "type":"module",
+  "type": "module",
   "scripts": {
+    "seed":"node app/seeder/index.js",
     "start": "node app/server.js",
     "dev": "nodemon app/server.js"
   },
@@ -14,6 +15,7 @@
   "author": "Om Prakash Tiwari <optiwari.india@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.1",
     "cors": "^2.8.5",
     "express": "^4.19.2",
     "express-form-parser": "^1.0.0",

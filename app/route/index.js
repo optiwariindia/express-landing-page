@@ -1,11 +1,12 @@
 import express from "express";
-import { default as Home } from "./home.js";
-import { default as Auth } from "./auth.js";
-import { default as Admin } from "./admin.js";
+import homeRouter from "./home.js";
+import authRouter from "./auth.js";
+import adminRouter from "./admin.js";
+import apiRouter from "./api/index.js";
 
 const Router = express.Router();
-Router
-    .use("/", Home)
-    .use("/login", Auth)
-    .use("/admin",Admin)
+Router.use("/", homeRouter)
+  .use("/login", authRouter)
+  .use("/admin", adminRouter)
+  .use("/api/v1", apiRouter);
 export default Router;

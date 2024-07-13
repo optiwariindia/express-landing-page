@@ -1,5 +1,5 @@
 import { validateAndSubmit } from "./modules/form.js";
-import { Login, Logout} from "./modules/Auth.js"
+import { Login, Logout,LoadDashboard} from "./modules/Auth.js"
 const forms = document.querySelectorAll("form[api-form]");
 forms.forEach(form => {
     form.querySelector("button[type=submit]").addEventListener("click", async (e) => {
@@ -11,10 +11,19 @@ forms.forEach(form => {
         
     })
 })
-Login();
+if(Login()){
+    LoadDashboard();
+}
 document.addEventListener("login",()=>{
-    console.log("Login event called")
+    LoadDashboard();
 });
 document.addEventListener("logout",()=>{
-    console.log("Logout event called")
+    Logout();
+    LoadDashboard();
 });
+document.querySelectorAll("[action=logout]").forEach(actionButton=>{
+    actionButton.addEventListener("click",(e)=>{
+        e.preventDefault();
+        document.dispatchEvent(new Event("logout"));
+    })
+})

@@ -7,6 +7,28 @@ let schema = new mongoose.Schema(
       required: true,
       unique: true,
     },
+    socials: [
+      {
+        name: {
+          type: "String",
+          required: "true",
+        },
+        icon: {
+          type: "String",
+          required: "true",
+        },
+        link: {
+          type: "String",
+          required: "true",
+        },
+      },
+    ],
+    links: [
+      {
+        name: "String",
+        link: "String",
+      },
+    ],
   },
   {
     timestamps: true,

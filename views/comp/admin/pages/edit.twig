@@ -1,0 +1,44 @@
+<div class="crud-head">
+	<div class="title">Edit Page: {{info.title}}</div>
+</div>
+<div class="crud-body">
+	<div class="new-form show">
+		<form action="/api/v1/page/{{info._id}}" method="put" api-form="/api/v1/page//{{info._id}}">
+			<div class="frm-title">
+                <h2></h2>
+				<button type="button" class="back">&times;</button>
+			</div>
+			<div class="input-group">
+				<label for="slug">Slug</label>
+				<input value="{{info.slug}}" name="slug" required pattern="^[a-z0-9\-]+$" type="text">
+			</div>
+			<div class="input-group">
+				<label for="title">Title</label>
+				<input value="{{info.title}}" name="title" required pattern="^[a-zA-Z 0-9]+$" type="text">
+			</div>
+			<div class="input-group">
+				<label for="keywords">Keywords</label>
+				<input value="{{info.keywords}}" name="keywords" required pattern="^[a-zA-Z 0-9\,\-]+$" type="text">
+			</div>
+			<div class="input-group">
+				<label for="description">Description</label>
+				<input value="{{info.description}}" name="description" required pattern="^[a-zA-Z0-9 \,\!\@\#\$\%\&\*\(\)]+$" type="text">
+			</div>
+			<div class="input-group">
+				<label for="og">OG Tags</label>
+				<textarea name="og" id="og">{{info.og}}</textarea>
+			</div>
+			<div class="input-group">
+				<label for="snippet">Snippets</label>
+				<textarea name="snippet" id="snippet">{{info.snippet}}</textarea>
+			</div>
+			<div class="input-group">
+				<label for="customcss">Custom CSS</label>
+				<textarea name="customcss" id="customcss">{{info.customcss}}</textarea>
+			</div>
+			<div class="input-group flx-right">
+				<button type="submit">Update</button>
+			</div>
+		</form>
+	</div>
+</div>

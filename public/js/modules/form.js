@@ -26,6 +26,8 @@ export async function validateAndSubmit(form){
         document.dispatchEvent(event);
     }
     if(resp?.status==="success"){
+    }
+    if("message" in resp){
         new Toast(resp?.message,"success");
     }
     if(resp?.status==="error"){
@@ -35,5 +37,8 @@ export async function validateAndSubmit(form){
             document.dispatchEvent(event);
         }
         new Toast(resp?.message,"error");
+    }
+    if("reload" in resp){
+        location.reload();
     }
 }

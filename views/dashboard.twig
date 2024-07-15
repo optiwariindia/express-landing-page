@@ -25,7 +25,9 @@
 					{% endfor %}
 				</ul>
 			</aside>
-			<div class="main-body"></div>
+			<div class="main-body">
+				{% include "comp/admin/" ~ page ~".twig"%}
+			</div>
 		</main>
 		 <script src="/js/dom-enhancement.js"></script>
 		 <script type="module" src="/js/admin.js"></script>

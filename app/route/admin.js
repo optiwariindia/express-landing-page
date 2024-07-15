@@ -1,24 +1,7 @@
 import express from "express";
-class Navbar {
-  #navitem = [];
-  #activeLink = "/";
-  constructor(navitems) {
-    this.#navitem = navitems;
-  }
-  set activeLink(link) {
-    if (typeof link !== "string") {
-      this.#activeLink = "";
-      return;
-    }
-    this.#activeLink = link;
-  }
-  get sidenav() {
-    return JSON.parse(JSON.stringify(this.#navitem)).map((itm) => {
-      if (itm.link === this.#activeLink) itm.active = true;
-      return itm;
-    });
-  }
-}
+import Navbar from "../utils/navbar.js";
+import Page from "./page.js";
+
 let sidenav = new Navbar([
   {
     link: "/admin",
@@ -45,4 +28,5 @@ Router.get("/pages", (req, res) => {
     page: "pages",
   });
 });
+Router.use("/page",Page);
 export default Router;

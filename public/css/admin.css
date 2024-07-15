@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     margin: 0;
     padding: 0;
     height: 100%;
@@ -6,16 +7,16 @@ body, html {
 }
 
 body {
-    background: url('/images/banner.jpg') no-repeat center center fixed;
+    background: url("/images/banner.jpg") no-repeat center center fixed;
     background-size: cover;
 }
-body.dashboard{
-	background:none;
+body.dashboard {
+    background: none;
 }
-body.dashboard::before{
-	content:"";
-	background:url('/images/banner.jpg');
-	background-size:cover;
+body.dashboard::before {
+    content: "";
+    background: url("/images/banner.jpg");
+    background-size: cover;
     position: absolute;
     top: 0;
     left: 0;
@@ -25,92 +26,125 @@ body.dashboard::before{
     opacity: 0.3; /* 30% opacity */
     z-index: -1;
 }
-.login-container{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    width:100%;
-    height:100%;
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
 }
-.login-form{
-    background:rgba(255,255,255,0.8);
-    padding:20px;
-    border-radius:10px;
+.login-form {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
     box-shadow: 0 0 10px #fff;
-    width:300px;
+    width: 300px;
 }
-.login-form h2{
-    text-align:center;
-    margin:0 0 20px 0;
+.login-form h2 {
+    text-align: center;
+    margin: 0 0 20px 0;
 }
-.login-form form {
-    display:grid;
-    gap:20px;
+.new-form {
+    border: 5px double black;
+    display: none;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 10px;
 }
-.input-group{
-    display:flex;
-    flex-direction:column;
-    gap:5px;
+.new-form.show {
+    display: grid;
 }
-.input-group input{
-    padding:5px;
-    border-radius:5px;
-    border:none;
+form {
+    display: grid;
+    gap: 20px;
 }
-.error{
-	color:red;
-	font-size:14px;
-	text-align:right;
+.frm-title {
+    display: flex;
+    justify-content: space-between;
+}
+.frm-title button.close {
+    color: red;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0);
+}
+.frm-title button.close:hover {
+    background: red;
+    font-size: 20px;
+    color: #fff;
+}
+.frm-title h2 {
+    padding: 0;
+    margin: 0;
+}
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.input-group input,
+.input-group textarea {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+.error {
+    color: red;
+    font-size: 14px;
+    text-align: right;
 }
 
+.button,
 button {
-	border: none;
-	background-color:rgba(14,27,27,1);
-	color: #faa500;
-	border-radius: 5px;
-	padding: 10px 20px;
-	transition: 500ms ease-in-out;
-	font-weight: bold;
-	font-size: 16px;
+    border: none;
+    background-color: rgba(14, 27, 27, 1);
+    color: #faa500;
+    border-radius: 5px;
+    padding: 10px 20px;
+    transition: 500ms ease-in-out;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
 }
+.button:hover,
 button:hover {
-	background:  #faa500;
-	color: rgba(14,27,27,1);
+    background: #faa500;
+    color: rgba(14, 27, 27, 1);
 }
-.toast{
-	position:fixed;
-	bottom:0;
-	left:0;
-	right:0;
-	display:flex;
-	padding:10px;
-	color:#fff;
-	justify-content:center;
-	align-items:center;
+.toast {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    padding: 10px;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
 }
-.toast.error{
-	background:red;
+.toast.error {
+    background: red;
 }
-.toast.success{
-	background:#002500;
+.toast.success {
+    background: #002500;
 }
-header{
-	/* border:1px solid; */
-	display:flex;
-	align-items:center;
-	justify-content:space-between;
-	max-height:50px;
-	background:#003b00;
-	padding:0 30px;
+header {
+    /* border:1px solid; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-height: 50px;
+    background: #003b00;
+    padding: 0 30px;
 }
-header .nav-brand{
-	display:flex;
-	max-height:50px;
-	justify-content:center;
+header .nav-brand {
+    display: flex;
+    max-height: 50px;
+    justify-content: center;
 }
-header .nav-brand img{
-	max-height:50px;
-	padding:5px;
+header .nav-brand img {
+    max-height: 50px;
+    padding: 5px;
 }
 header ul.nav {
     display: flex;
@@ -118,58 +152,99 @@ header ul.nav {
     gap: 10px;
     list-style: none;
 }
-header a{
-	color:#fff;
-	text-decoration:none;
-	border:1px solid yellow;
-	padding:5px 10px;
-	border-radius:5px;
+header a {
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid yellow;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-header a.active ,header a:hover{
-	color:black;
-	text-decoration:none;
-	border:1px solid yellow;
-	background:yellow;
-	padding:5px 10px;
-	border-radius:5px;
+header a.active,
+header a:hover {
+    color: black;
+    text-decoration: none;
+    border: 1px solid yellow;
+    background: yellow;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
-main{
-	display:grid;
-	grid-template-columns:250px 1fr;
-	height:calc(100% - 50px);
+main {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    height: calc(100% - 50px);
 }
-main aside.sidenav{
-	background:#003b00;
-	height:cacl(100% - 50px);
-	overflow:auto;
+main aside.sidenav {
+    background: #003b00;
+    height: 100%;
+    overflow: auto;
 }
-main aside.sidenav ul.nav{
-	list-style:none;
-	display:flex;
-	flex-direction:column;
-	gap:10px;
-	padding:0;
+main aside.sidenav ul.nav {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
 }
-main aside.sidenav ul.nav li.nav-item{
-	border-bottom:1px solid yellow;
+main aside.sidenav ul.nav li.nav-item {
+    border-bottom: 1px solid yellow;
 }
-main aside.sidenav ul.nav li.nav-item a{
-	display: block;
-	padding:5px 10px;
-	text-decoration:none;
-	color:yellow;
-	transition:500ms ease;
-	text-overflow:ellipsis;
-	text-wrap:nowrap;
-	overflow:hidden;
+main aside.sidenav ul.nav li.nav-item a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: yellow;
+    transition: 500ms ease;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+    overflow: hidden;
 }
 main aside.sidenav ul.nav li.nav-item a.active,
-main aside.sidenav ul.nav li.nav-item a:hover{
-	background-color:yellow;
-	color:rgb(14,27,27);
+main aside.sidenav ul.nav li.nav-item a:hover {
+    background-color: yellow;
+    color: rgb(14, 27, 27);
 }
-
+main .main-body {
+    height: calc(100% - 30px);
+    overflow: auto;
+    padding: 20px 20px 0px 20px;
+}
+main .main-body .crud-head {
+    display: flex;
+    justify-content: space-between;
+}
+main .main-body .crud-head .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+.flx-right {
+    display: flex;
+    align-items: end;
+}
+table {
+    border: 1px solid black;
+    width: 100%;
+}
+table td,
+table th {
+    border: 1px solid black;
+    padding: 5px;
+}
+.buttons {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+.small {
+    padding: 5px 10px;
+}
+.delete {
+    background: red;
+    color: #fff;
+}
+.edit {
+    background: #1d5413;
+}
 /* Style the scrollbar track */
 ::-webkit-scrollbar {
     width: 10px; /* Width of the scrollbar */
@@ -177,23 +252,28 @@ main aside.sidenav ul.nav li.nav-item a:hover{
 
 /* Style the scrollbar thumb */
 ::-webkit-scrollbar-thumb {
-	width:8px;
+    width: 8px;
     background: yellow; /* Color of the scrollbar thumb */
     border-radius: 6px; /* Roundness of the scrollbar thumb */
 }
 
 /* Style the scrollbar thumb when hovered */
 ::-webkit-scrollbar-thumb:hover {
-    background:#909000; /* Color when hovering over the scrollbar thumb */
+    background: #909000; /* Color when hovering over the scrollbar thumb */
 }
 
 /* Style the scrollbar track */
 ::-webkit-scrollbar-track {
-    background:#047304; /* Background color of the scrollbar track */
-    border-radius: 6px;/* Roundness of the scrollbar track */
+    background: #047304; /* Background color of the scrollbar track */
+    border-radius: 6px; /* Roundness of the scrollbar track */
 }
 
 /* Style the scrollbar track when active */
 ::-webkit-scrollbar-track:hover {
-    background: rgba(0,59,0,0.8); /* Color when hovering over the scrollbar track */
+    background: rgba(
+        0,
+        59,
+        0,
+        0.8
+    ); /* Color when hovering over the scrollbar track */
 }

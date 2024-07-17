@@ -36,5 +36,12 @@ export default class API {
     return await response.json();
   }
   async patch(endpoint = "/", data = {}) {}
-  async delete(endpoint = "/") {}
+  async delete(endpoint = "/", data) {
+    let response = await fetch(endpoint, {
+      method: "DELETE",
+      headers: this.header,
+      body: JSON.stringify(data),
+    });
+    return await response.json();
+  }
 }

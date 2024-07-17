@@ -99,7 +99,9 @@ form {
     font-size: 14px;
     text-align: right;
 }
-
+img.thumb{
+    max-height:150px;
+}
 .button,
 button {
     border: none;

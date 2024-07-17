@@ -1,6 +1,6 @@
 import express from "express";
 import Navbar from "../utils/navbar.js";
-import { Banner, Page } from "../model/index.js";
+import { Banner, Page, USP } from "../model/index.js";
 let info = {};
 let sidenav = new Navbar([
   {
@@ -52,10 +52,13 @@ Router.get("/:id", async (req, res) => {
   })
   .get("/:id/usp", async (req, res) => {
     const page = await Page.findById(req.params.id);
+    const usps = await USP.find({ slug: page.slug });
+    // return res.json({ page, usps });
     return res.render("dashboard.twig", {
       sidenav: sidenav.sidenav,
       page: "pages/usp",
-      info: { ...page, ...info },
+      info: page,
+      usps,
     });
   })
   .get("/:id/testimonials", async (req, res) => {

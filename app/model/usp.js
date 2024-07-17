@@ -5,7 +5,6 @@ let schema = new mongoose.Schema(
     slug: {
       type: "String",
       required: true,
-      unique: true,
     },
     image: {
       type: "String",
@@ -15,10 +14,14 @@ let schema = new mongoose.Schema(
       type: "String",
       required: true,
     },
+    description: {
+      type: "String",
+      required: false,
+    },
   },
   {
     timestamps: true,
-    collection: "pages",
+    collection: "usps",
   },
 );
 const USP = mongoose.models.usps || mongoose.model("usps", schema);

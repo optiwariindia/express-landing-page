@@ -42,7 +42,7 @@ Router.route("/:slug")
       let file = data.banner.name.split(".");
       let ext = file.pop();
       let filename = `/uploads/banner-${req.params.slug}.${ext}`;
-      data.banner.mv(`public/${filename}`);
+      data.banner.mv(`public${filename}`);
       data.banner.newName = filename;
       banner.image = filename;
     }

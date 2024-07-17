@@ -2,6 +2,7 @@ import { validateAndSubmit } from "./modules/form.js";
 import { Login, Logout, LoadDashboard } from "./modules/Auth.js";
 import PreveiwOnFileChange from "./modules/preview.js";
 import Page from "./modules/page.js";
+import API from "./modules/api.js";
 const forms = document.querySelectorAll("form[api-form]");
 forms.forEach((form) => {
   form
@@ -55,4 +56,21 @@ document.querySelectorAll("[action=logout]").forEach((actionButton) => {
 })();
 (() => {
   PreveiwOnFileChange();
+})();
+(() => {
+  let deleteButtons = document.querySelectorAll("[delete]");
+  deleteButtons.forEach((btn) => {
+    const endpoint = btn.getAttribute("endpoint");
+    const data = {
+      id: btn.getAttribute("delete"),
+    };
+    btn.addEventListener("click", () => {
+      const api = new API();
+      api.delete(endpoint, data).then((r) => {
+        location.reload();
+        console.log(r);
+      });
+    });
+    console.log({ endpoint, data });
+  });
 })();

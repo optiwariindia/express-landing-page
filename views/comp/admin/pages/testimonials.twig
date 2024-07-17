@@ -1,0 +1,74 @@
+<div class="crud-head">
+	<div class="title">
+        Testimonials :
+		{{info.title}}
+	</div>
+	<button class="new-btn">New</button>
+</div>
+<div class="crud-body">
+	<div class="new-form">
+		<form action="/api/v1/testimonials/{{info.slug}}" method="post" enctype="multipart/form-data" api-form="/api/v1/usp/{{info.slug}}">
+			<div class="frm-title">
+				<h2>New Testimonial</h2>
+				<button type="button" class="close">&times;</button>
+			</div>
+			<div class="input-group">
+				<label for="thumbnail">Click to change
+					<img src="/images/about.jpg" input="thumbnail">
+				</label>
+				<input type="file" name="thumbnail" id="thumbnail" accept="image/jpeg,image/png,image/webp">
+			</div>
+			<div class="input-group">
+				<label for="name">Name</label>
+				<input name="name" required pattern="^[a-zA-Z 0-9]+$" type="text">
+			</div>
+			<div class="input-group">
+				<label for="message">Message</label>
+				<input name="message" required type="text">
+			</div>
+
+			<div class="input-group">
+				<label for="city">City</label>
+				<input name="city" required type="text">
+			</div>
+
+			<div class="input-group">
+				<label for="date">Date</label>
+				<input name="date" required type="text">
+			</div>
+			<div class="input-group flx-right">
+				<button type="submit">Add</button>
+			</div>
+		</form>
+	</div>
+	<div class="table-container">
+		<table>
+			<thead>
+				<tr>
+					<th>Sl. No.</th>
+					<th>Image</th>
+					<th>Name</th>
+                    <th>City</th>
+                    <th>Date</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for testimonial in testimonials %}
+					<tr>
+						<td>{{loop.index}}</td>
+						<td><img src="{{testimonial.image}}" class="thumb"></td>
+                        <td>{{testimonial.name}}</td>
+                        <td>{{testimonial.city}}</td>
+                        <td>{{testimonial.date}}</td>
+						<td>
+                        <span class="buttons">
+                            <button delete="{{USP._id}}" endpoint="/api/v1/usp/{{info.slug}}" class="small delete">Delete</button>
+                        </span>
+                        </td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>

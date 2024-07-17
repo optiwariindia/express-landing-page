@@ -33,6 +33,7 @@ Router.delete("/:slug", async (req, res) => {
   return res.json({
     status: "success",
     message: "Added Successfully",
+    reload: "2000",
   });
 });
 export default Router;

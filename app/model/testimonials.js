@@ -28,7 +28,7 @@ let schema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "pages",
+    collection: "testimonials",
   },
 );
 const Testimonials =

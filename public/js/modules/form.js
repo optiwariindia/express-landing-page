@@ -30,11 +30,14 @@ export async function validateAndSubmit(form) {
       },
       body: formData,
     });
-    console.log(await temp.json());
+    processResponse(await temp.json());
     return;
   }
   let data = form.getData();
   let resp = await api[method.toLowerCase()](action, data);
+  processResponse(resp);
+}
+function processResponse(resp) {
   if ("token" in resp) {
     localStorage.setItem("token", resp.token);
     let event = new CustomEvent("login");

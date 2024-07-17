@@ -18,7 +18,7 @@ let schema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "pages",
+    collection: "faqs",
   },
 );
 const FAQ = mongoose.models.faqs || mongoose.model("faqs", schema);

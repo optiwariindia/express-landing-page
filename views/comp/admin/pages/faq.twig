@@ -1,1 +1,52 @@
-FAQS
+<div class="crud-head">
+	<div class="title">
+        FAQ :
+		{{info.title}}
+	</div>
+	<button class="new-btn">New</button>
+</div>
+<div class="crud-body">
+	<div class="new-form">
+		<form action="/api/v1/faq/{{info.slug}}" method="post" enctype="multipart/form-data" api-form="/api/v1/usp/{{info.slug}}">
+			<div class="frm-title">
+				<h2>New Question</h2>
+				<button type="button" class="close">&times;</button>
+			</div>
+			<div class="input-group">
+				<label for="question">Question</label>
+				<input name="question" required type="text">
+			</div>
+			<div class="input-group">
+				<label for="answer">Answer</label>
+				<input name="answer" required type="text">
+			</div>
+			<div class="input-group flx-right">
+				<button type="submit">Add</button>
+			</div>
+		</form>
+	</div>
+	<div class="table-container">
+		<table>
+			<thead>
+				<tr>
+					<th>Sl. No.</th>
+					<th>Question</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for faq in faqs %}
+					<tr>
+						<td>{{loop.index}}</td>
+                        <td>{{faq.question}}</td>
+						<td>
+                        <span class="buttons">
+                            <button delete="{{faq._id}}" endpoint="/api/v1/faq/{{info.slug}}" class="small delete">Delete</button>
+                        </span>
+                        </td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>

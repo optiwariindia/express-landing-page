@@ -1,6 +1,6 @@
 import express from "express";
 import Navbar from "../utils/navbar.js";
-import { Banner, Page, Testimonials, USP } from "../model/index.js";
+import { Banner, FAQ, Page, Testimonials, USP } from "../model/index.js";
 let info = {};
 let sidenav = new Navbar([
   {
@@ -73,10 +73,12 @@ Router.get("/:id", async (req, res) => {
   })
   .get("/:id/faq", async (req, res) => {
     const page = await Page.findById(req.params.id);
+    const faqs = await FAQ.find({ slug: page.slug });
     return res.render("dashboard.twig", {
       sidenav: sidenav.sidenav,
       page: "pages/faq",
-      info: { ...page, ...info },
+      info: page,
+      faqs,
     });
   })
   .get("/:id/footer", async (req, res) => {

@@ -1,5 +1,6 @@
 import express from "express";
 import mongoose from "mongoose";
+import expressFileUpload from "express-fileupload";
 import cors from "cors";
 import twig from "twig";
 import expressPureip from "express-pureip";
@@ -17,6 +18,11 @@ import routes from "./route/index.js";
     .use(cors())
     .use(express.json())
     .use(express.urlencoded({ extended: true }))
+    .use(expressFileUpload())
+    .use((req, res, next) => {
+      if ("files" in req) req.body = { ...req.files, ...req.body };
+      next();
+    })
     .use(express.static("public"))
     .use(expressPureip)
     .use(routes)

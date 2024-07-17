@@ -87,6 +87,13 @@ form {
     border-radius: 5px;
     border: none;
 }
+.input-group img{
+    max-width:100%;
+    padding:10px;
+}
+.input-group input[type=file]{
+    display:none;
+}
 .error {
     color: red;
     font-size: 14px;

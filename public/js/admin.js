@@ -1,5 +1,6 @@
 import { validateAndSubmit } from "./modules/form.js";
 import { Login, Logout, LoadDashboard } from "./modules/Auth.js";
+import PreveiwOnFileChange from "./modules/preview.js";
 import Page from "./modules/page.js";
 const forms = document.querySelectorAll("form[api-form]");
 forms.forEach((form) => {
@@ -51,4 +52,7 @@ document.querySelectorAll("[action=logout]").forEach((actionButton) => {
 })();
 (() => {
   Page();
+})();
+(() => {
+  PreveiwOnFileChange();
 })();

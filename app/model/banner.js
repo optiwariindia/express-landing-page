@@ -29,7 +29,7 @@ let schema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "pages",
+    collection: "banner",
   },
 );
 const Banner = mongoose.models.banner || mongoose.model("banner", schema);

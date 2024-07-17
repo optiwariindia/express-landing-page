@@ -28,5 +28,5 @@ Router.get("/pages", (req, res) => {
     page: "pages",
   });
 });
-Router.use("/page",Page);
+Router.use("/page", Page);
 export default Router;

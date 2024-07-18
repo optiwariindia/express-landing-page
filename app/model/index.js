@@ -6,3 +6,6 @@ export { default as FAQ } from "./faq.js";
 export { default as Footer } from "./footer.js";
 export { default as Testimonials } from "./testimonials.js";
 export { default as USP } from "./usp.js";
+export { default as Contact } from "./contact.js";
+export { default as Socials } from "./socials.js";
+export { default as Config } from "./config.js";

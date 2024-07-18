@@ -5,6 +5,7 @@ let schema = new mongoose.Schema(
     slug: {
       type: "String",
       required: true,
+      unique:false
     },
     image: {
       type: "String",

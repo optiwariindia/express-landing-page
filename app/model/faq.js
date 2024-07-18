@@ -5,7 +5,7 @@ let schema = new mongoose.Schema(
     slug: {
       type: "String",
       required: true,
-      unique: true,
+      unique: false,
     },
     question: {
       type: "String",
@@ -18,8 +18,8 @@ let schema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "faqs",
+    collection: "faq",
   },
 );
-const FAQ = mongoose.models.faqs || mongoose.model("faqs", schema);
+const FAQ = mongoose.models.faq || mongoose.model("faq", schema);
 export default FAQ;

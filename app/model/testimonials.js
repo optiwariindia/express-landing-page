@@ -28,9 +28,9 @@ let schema = new mongoose.Schema(
   },
   {
     timestamps: true,
-    collection: "testimonials",
+    collection: "testimonial",
   },
 );
 const Testimonials =
-  mongoose.models.testimonials || mongoose.model("testimonials", schema);
+  mongoose.models.testimonials || mongoose.model("testimonial", schema);
 export default Testimonials;
